@@ -1,0 +1,314 @@
+# ============================================================================
+# .gitignore for R Single-Cell RNA-seq Project
+# ============================================================================
+
+# ============================================================================
+# R specific
+# ============================================================================
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+*.Rproj
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+# pkgdown site
+docs/
+
+# translation temp files
+po/*~
+
+# RStudio Connect folder
+rsconnect/
+
+# ============================================================================
+# Python specific (if using scanpy/Python tools)
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# ============================================================================
+# Data files - DO NOT COMMIT LARGE FILES
+# ============================================================================
+
+# Raw data (too large for GitHub)
+data/raw/**/*.mtx
+data/raw/**/*.mtx.gz
+data/raw/**/*.h5
+data/raw/**/*.h5ad
+data/raw/**/*.loom
+data/raw/**/*.rds
+data/raw/**/*.tar.gz
+data/raw/**/*.fastq
+data/raw/**/*.fastq.gz
+data/raw/**/*.bam
+data/raw/**/*.sam
+
+# Processed data (Seurat objects can be large)
+data/processed/**/*.rds
+data/processed/**/*.h5
+data/processed/**/*.h5ad
+data/processed/**/*.h5Seurat
+
+# Keep small metadata files but ignore large ones
+data/metadata/**/*.rds
+data/metadata/**/*.csv.gz
+
+# Exception: Allow small example/test data
+!data/raw/example/*.mtx.gz
+!data/processed/example/*.rds
+
+# ============================================================================
+# Results - Selective tracking
+# ============================================================================
+
+# Large result files
+results/**/*.rds
+results/**/*.h5
+results/**/*.RData
+
+# Keep small tables and plots
+!results/tables/*.csv
+!results/tables/*.xlsx
+!results/figures/*.png
+!results/figures/*.pdf
+!results/QC/*.pdf
+
+# Temporary results
+results/tmp/
+results/temp/
+
+# ============================================================================
+# OS specific
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================================
+# IDEs and Editors
+# ============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Exclude specific VSCode settings if you want team-wide settings
+# Comment out if you want to share VSCode settings
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# ============================================================================
+# Manuscript drafts
+# ============================================================================
+
+# MS Word temporary files
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+
+# LibreOffice locks
+.~lock.*
+
+# Temporary TeX files (if using LaTeX)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+
+# ============================================================================
+# Logs and databases
+# ============================================================================
+
+*.log
+*.sql
+*.sqlite
+*.db
+
+# ============================================================================
+# Package manager files
+# ============================================================================
+
+# renv (R package manager)
+renv/
+renv.lock
+
+# conda
+*.conda
+.conda/
+
+# ============================================================================
+# Custom project-specific ignores
+# ============================================================================
+
+# Scratch/experimental notebooks
+notebooks/scratch/
+notebooks/experimental/
+
+# Personal notes
+NOTES.md
+TODO_personal.md
+
+# Sensitive information
+*_credentials.json
+*_config_local.R
+.env
+.env.local
+
+# Large cached results
+cache/
+.cache/
+
+# Temporary download directory
+downloads/
+tmp/
+temp/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# ============================================================================
+# EXCEPTIONS - Files to ALWAYS track
+# ============================================================================
+
+# Always track these even if they match above patterns
+!README.md
+!LICENSE
+!.gitignore
+!requirements.txt
+!environment.yml
+
+# Small reference files
+!data/metadata/sample_info.csv
+!data/metadata/cell_annotations.csv
+
+# Example/template files
+!notebooks/00_template.ipynb
+!scripts/utils/*.R
+
+# Documentation
+!docs/**/*.md
+!docs/**/*.pdf
+
+# Small figures for README
+!figures/workflow_diagram.png
+!figures/graphical_abstract.png
+
+# ============================================================================
+# GitHub specific
+# ============================================================================
+
+# GitHub Actions
+# Comment out if you use GitHub Actions
+.github/workflows/*.yml
